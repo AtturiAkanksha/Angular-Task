@@ -1,0 +1,75 @@
+  <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}" id="employeeForm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Employee Details</h4>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="AddEmployeeForm">
+                        <div class="d-flex" class="form-group">
+                            <label for="firstnameInput">firstname:</label>
+                            <input type="text" #firstname class="form-control" placeholder="firstname" name="firstname"
+                                id="firstnameInput" formControlName="firstname" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('firstname').errors?.['pattern'] " class="error-message" >Error! firstname should contain only letters of minimum 3 characters .</div>
+                        <div *ngIf=" AddEmployeeForm.get('firstname').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>
+
+                        <div class="d-flex" class="form-group">
+                            <label for="lastnameInput">lastname:</label>
+                            <input #lastname type="text" class="form-control" placeholder="lastname" name="lastname"
+                                id="lastnameInput" formControlName="lastname" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('lastname').errors?.['pattern'] " class="error-message" >Error! lastname should contain only letters of minimum 3 characters .</div>
+                        <div *ngIf="isFormSubmitted && AddEmployeeForm.get('lastname').errors?.['required']" class="error-message" >Error! field empty</div>
+
+                        <div class="d-flex" class="form-group">
+                            <label for="emailInput">email:</label>
+                            <input type="email" placeholder="email" name="email" id="emailInput" class="form-control"
+                                formControlName="email" required />
+                        </div>
+                        <div *ngIf="AddEmployeeForm.get('email').errors?.['pattern']" class="error-message">  Error! incorrect email type. </div>
+                        <div *ngIf=" AddEmployeeForm.get('email').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>
+
+                        <div class="d-flex" class="form-group">
+                            <label for="jobtitleInput">jobtitle:</label>
+                            <input type="text" placeholder="jobtitle" name="office" id="jobtitleInput"
+                                class="form-control" formControlName="jobtitle" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('jobtitle').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>
+
+                        <div class="d-flex" class="form-group">
+                            <label for="">office:</label>
+                            <input type="text" placeholder="Office" name="office" id="officeInput" class="form-control"
+                                formControlName="office" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('office').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>
+
+                        <div class="d-flex" class="form-group">
+                            <label for="">department:</label>
+                            <input type="text" placeholder="Department" class="form-control" name="department"
+                                id="departmentInput" formControlName="department" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('department').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>
+
+                        <div class="d-flex" class="form-group">
+                            <label for="">phonenum:</label>
+                            <input type="number" placeholder="Phone Number" name="phonenumber" id="phonenumberInput"
+                                class="form-control" formControlName="phonenumber" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('phonenumber').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>
+                        <div *ngIf="AddEmployeeForm.get('phonenumber').errors?.['pattern']" class="error-message">  Error! incorrect phonenumber type. </div>
+                        <div class="d-flex" class="form-group">
+                            <label for="">skypeid:</label>
+                            <input type="text" placeholder="Skype ID" name="skypeid" id="skypeidInput"
+                                class="form-control" formControlName="skypeid" required />
+                        </div>
+                        <div *ngIf=" AddEmployeeForm.get('skypeid').errors?.['required'] && isFormSubmitted" class="error-message" >Error! field empty</div>   
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="submitForm()" >Save</button>
+                    <button type="button" class="btn btn-default" (click)="onClose()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
