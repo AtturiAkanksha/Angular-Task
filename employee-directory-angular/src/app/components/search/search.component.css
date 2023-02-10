@@ -1,0 +1,13 @@
+.d-flex{
+    display: flex;
+}
+.ml-4{
+    margin-left: 4rem;
+}
+.div-right{
+   margin-left: 10vw; 
+}
+.ml-2{
+    margin-left: 2px;
+    margin-bottom: 13px;
+}
