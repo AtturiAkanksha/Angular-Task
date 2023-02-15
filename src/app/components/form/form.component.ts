@@ -3,8 +3,6 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 import { EmployeeDataService } from '../../employeedataservice';
 import { Employee } from '../../Employee';
 
-declare var window: any;
-
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
