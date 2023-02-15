@@ -1,0 +1,27 @@
+div{
+    margin-left: 15px;
+}
+li{
+    list-style: none;
+    position: relative;
+    left:-20px;
+  
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    text-transform: capitalize;
+}
+a:hover{
+    color: blue;
+}
+.mr-4{
+    position: relative;
+    right:1rem;
+    top:-15px;
+}
+.text-primary{
+    position: relative;
+    top:-15px;
+}

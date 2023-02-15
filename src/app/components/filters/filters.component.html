@@ -1,0 +1,31 @@
+<div  id="Departments">
+    <h4>Departments</h4>
+    <ul>
+        <li *ngFor="let dept of deptCount | keyvalue" id="departmentId" (click)="clickDept(dept.key)"
+            data-value="{{dept.key}}">{{dept.key}} ({{dept.value}})
+        </li>
+    </ul>
+</div>
+<div  id="offices">
+    <h4>Offices</h4>
+    <ul>
+        <li *ngFor="let office of officeCount| keyvalue" id="officetId" (click)="clickOffice(office.key)">{{office.key}}
+            ({{office.value}})</li>
+    </ul>
+</div>
+<div  id="jobtitles">
+    <h4>Job Titles</h4>
+    <ul>
+        <li *ngFor="let jobs of jobsCount |keyvalue" id="jobtitleId" (click)="clickJob(jobs.key)">{{jobs.key}}
+            ({{jobs.value}})</li>
+    </ul>
+    <div *ngIf="isShow">
+        <ul>
+            <li class="mr-4" *ngFor="let morejobs of moreJobs |keyvalue">{{morejobs.value}} ({{morejobs.key}})</li>
+        </ul>
+    </div>
+    <ul>
+        <li class="text-primary " (click)="viewContent()" *ngIf="!isShow"><b>view more</b></li>
+        <li class="text-primary" (click)="viewContent()" *ngIf="isShow"><b>view less</b></li>
+    </ul>
+</div>
